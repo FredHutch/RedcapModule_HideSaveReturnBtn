@@ -1,0 +1,16 @@
+{
+    "name": "Stealth Queue",
+    "namespace": "FredHutchNamespace\\StealthQueueClass", 
+    "description": "This module sends REDCap's survey queue under cover. When employed, survey queue will function normally but will work silently and invisibly. And the REDCap user will not know it is there. Notes: Turn auto-start on for all surveys in the queue. Also, do not enable this module where where users need to interact with the queue.",
+    "authors": [
+        {
+             "name": "Paul Litwin",
+             "email": "plitwin@fredhutch.org",
+             "institution": "Fred Hutchinson Cancer Research Center"
+         }
+     ],
+     "permissions": [
+        "redcap_survey_page",
+        "redcap_survey_complete"
+      ]
+ }
