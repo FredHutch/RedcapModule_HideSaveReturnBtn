@@ -12,3 +12,4 @@ HideSaveReturnBtn works by injecting a line of JavaScript into the survey page t
 
 ## Version History
 v1.0 -- initial version. 2019 Aug 01.
+v1.01 -- fix to config.json issue which prevented the external module from being configured.
