@@ -1,6 +1,6 @@
 {
     "name": "Hide Save & Return Button",
-    "namespace": "FredHutchNamespace\\SaveReturnBtnClass", 
+    "namespace": "FredHutchNamespace\\HideSaveReturnBtnClass", 
     "description": "This REDCap module hides the Save & Return button for all surveys in a project. Useful when building a participant portal around a REDCap project.",
     "authors": [
         {
@@ -10,7 +10,6 @@
          }
      ],
      "permissions": [
-        "redcap_survey_page",
-        "redcap_survey_complete"
+        "redcap_survey_page"
       ]
  }
