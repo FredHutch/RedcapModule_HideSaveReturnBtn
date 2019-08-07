@@ -1,5 +1,5 @@
 {
-    "name": "Hide Save & Return Button",
+    "name": "Hide Save and Return Button",
     "namespace": "FredHutchNamespace\\HideSaveReturnBtnClass", 
     "description": "This REDCap module hides the Save & Return button for all surveys in a project. Useful when building a participant portal around a REDCap project.",
     "authors": [
