@@ -81,24 +81,19 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
             $this->exitAfterHook();
             return;
         }
-
-
         ?>
         <script type="text/javascript">
         $(document).ready(function() {
-            var addBtn = "<?php echo $addBtn ?>";
-            var addBtnText = "<?php echo $addBtnText ?>";
-            var addBtnUrl = "<?php echo $addBtnUrl ?>";
+            // var addBtn = "<?php echo $addBtn ?>";
+            // var addBtnText = "<?php echo $addBtnText ?>";
+            // var addBtnUrl = "<?php echo $addBtnUrl ?>";
 
-            // $("button[name=\'submit-btn-savereturnlater\']").hide()
-            // if (addBtn == "1")
-            // {
-            //     //$("button[name=\'submit-btn-savereturnlater\']").after("<button id=\'submit-btn-alt-savereturn\' tabindex=\'0\' onClick=\'window.open(\'" + addBtnUrl + "\',\'_self\');return true;\'>" + addBtnText + "</button>");
-            //     $("button[name=\'submit-btn-savereturnlater\']").after("<a id=\'submit-btn-alt-savereturn\' tabindex=\'0\' class=\'jqbutton\' onClick=\'return true;\'  href=\'" + addBtnUrl + "\'>" + addBtnText + "</a>");
-            // }
+            if ($("button[name=\'submit-btn-saverecord\']").is(':visible')
+                && $("button[name=\'submit-btn-saverecord\']").text()=='Submit') {
+                $("button[name=\'submit-btn-savereturnlater\']").hide()
+            }
         });
         </script>
         <?php	
     }
-
 }
