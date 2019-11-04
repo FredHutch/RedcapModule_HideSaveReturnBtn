@@ -16,17 +16,18 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
 
     function redcap_save_record($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance)
     {
-        REDCap::logEvent(__FUNCTION__, "$record - $instrument - $event_id");
+        // REDCap::logEvent(__FUNCTION__, "$record - $instrument - $event_id");
 
         // only fire on surveys
         if (empty($survey_hash)) return;
 
         if (isset($_GET['__return'])) {
             // This is a save and return
-            REDCap::logEvent(__FUNCTION__ . "__return", json_encode($_GET));
-            REDCap::logEvent(__FUNCTION__, "Redirecting to portal");
+            // REDCap::logEvent(__FUNCTION__ . "__return", json_encode($_GET));
+            // REDCap::logEvent(__FUNCTION__, "Redirecting to portal");
             $this->redirectToPortal();
-        } else {
+        }
+        // } else {
             // This could be a next or real save - need to disambiguate
             // REDCap::logEvent(__FUNCTION__, "OTHER: " . json_encode($_GET));
             // // How do we tell if we are on the survey queue page as we want redirect - difficult.
@@ -52,7 +53,7 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
             // } else {
             //     REDCap::logEvent("Survey $instrument not complete yet", json_encode($data));
             // }
-        }
+        // }
     }
 
     function redirectToPortal() {
@@ -63,7 +64,7 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
 
     function redcap_survey_complete($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance)
     {
-        REDCap::logEvent("Survey Complete Hook Called", "$record - $instrument - $event_id");
+        // REDCap::logEvent("Survey Complete Hook Called", "$record - $instrument - $event_id");
         $addBtnUrl = $this->getProjectSetting('global_custom_button_url');
         redirect($addBtnUrl);
         $this->exitAfterHook();
@@ -84,10 +85,6 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
         ?>
         <script type="text/javascript">
         $(document).ready(function() {
-            // var addBtn = "<?php echo $addBtn ?>";
-            // var addBtnText = "<?php echo $addBtnText ?>";
-            // var addBtnUrl = "<?php echo $addBtnUrl ?>";
-
             if ($("button[name=\'submit-btn-saverecord\']").is(':visible')
                 && $("button[name=\'submit-btn-saverecord\']").text()=='Submit') {
                 $("button[name=\'submit-btn-savereturnlater\']").hide()
