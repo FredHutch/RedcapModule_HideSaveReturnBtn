@@ -87,7 +87,7 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
         $(document).ready(function() {
             if ($("button[name=\'submit-btn-saverecord\']").is(':visible')
                 && $("button[name=\'submit-btn-saverecord\']").text()=='Submit') {
-                $("button[name=\'submit-btn-savereturnlater\']").hide()
+                $("button[name=\'submit-btn-savereturnlater\']").hide();
             }
         });
         </script>
