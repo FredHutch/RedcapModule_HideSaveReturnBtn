@@ -85,6 +85,9 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
         ?>
         <script type="text/javascript">
         $(document).ready(function() {
+            //$("button[name=\'submit-btn-saverecord\']").click(function() {waitingDialog.show('Returning to portal...', {dialogSize: 'l',progressType: 'info'});});
+            //$("button[name=\'submit-btn-savereturnlater\']").click(function() {waitingDialog.show('Returning to portal...', {dialogSize: 'l',progressType: 'info'});});
+
             if ($("button[name=\'submit-btn-saverecord\']").is(':visible')
                 && $("button[name=\'submit-btn-saverecord\']").text()=='Submit') {
                 $("button[name=\'submit-btn-savereturnlater\']").hide();
