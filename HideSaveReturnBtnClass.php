@@ -23,37 +23,9 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
 
         if (isset($_GET['__return'])) {
             // This is a save and return
-            // REDCap::logEvent(__FUNCTION__ . "__return", json_encode($_GET));
-            // REDCap::logEvent(__FUNCTION__, "Redirecting to portal");
             $this->redirectToPortal();
+            $this->exitAfterHook(); // added 04-23-2020
         }
-        // } else {
-            // This could be a next or real save - need to disambiguate
-            // REDCap::logEvent(__FUNCTION__, "OTHER: " . json_encode($_GET));
-            // // How do we tell if we are on the survey queue page as we want redirect - difficult.
-            // // one option is to load the record and see if it is complete...
-            // // another option is to capture the survey queue page with a different hook and do a js redirect
-            // $field = $instrument . '_complete';
-            // $q = REDCap::getData('json', array($record), array($field), $event_id);
-
-
-            // $data = json_decode($q);
-
-            // REDCap::logEvent("41 :", json_encode($data));
-
-            // $result = current($data);
-            
-            // //REDCap::logEvent("Result for $record :", json_encode($result));
-
-
-            // if (! empty($result[$field]) && $result[$field] == '2') {
-            //     // survey is complete...
-            //     REDCap::logEvent("Survey complete- redirect");
-            //     $this->redirectToPortal();
-            // } else {
-            //     REDCap::logEvent("Survey $instrument not complete yet", json_encode($data));
-            // }
-        // }
     }
 
     function redirectToPortal() {
@@ -85,9 +57,6 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
         ?>
         <script type="text/javascript">
         $(document).ready(function() {
-            //$("button[name=\'submit-btn-saverecord\']").click(function() {waitingDialog.show('Returning to portal...', {dialogSize: 'l',progressType: 'info'});});
-            //$("button[name=\'submit-btn-savereturnlater\']").click(function() {waitingDialog.show('Returning to portal...', {dialogSize: 'l',progressType: 'info'});});
-
             if ($("button[name=\'submit-btn-saverecord\']").is(':visible')
                 && $("button[name=\'submit-btn-saverecord\']").text()=='Submit') {
                 $("button[name=\'submit-btn-savereturnlater\']").hide();
