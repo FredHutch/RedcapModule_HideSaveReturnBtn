@@ -11,7 +11,7 @@ For some of our projects, we construct portals that wrap around REDCap. In these
 HideSaveReturnBtn works by injecting a line of JavaScript into the survey page to hide the Save & Return button.
 
 ## Version History
-* v1.1  -- provide alt button that allows you to return to a URL.
+* v1.1  -- provide alt button that allows you to return to a URL. Andy Martin provided all the code to make it work.
 * v1.02 -- change name of module from 'hide_savereturn_btn' to 'hide_save_and_return_btn' to fix name collision.
 * v1.01 -- fix to config.json issue which prevented the external module from being configured.
 * v1.0  -- initial version. 2019 Aug 01.
