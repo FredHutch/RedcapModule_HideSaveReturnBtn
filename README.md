@@ -2,7 +2,7 @@
 This REDCap module hides the Save & Return button for all surveys in a project.
 
 ## Author 
-Paul Litwin, Fred Hutchinson Cancer Research Center
+Paul Litwin, Fred Hutchinson Cancer Research Center with assistance of Andy Martin, Stanford University
 
 ## Why?
 For some of our projects, we construct portals that wrap around REDCap. In these projects we employ the Survey Login feature and generate random codes that are then used to tranparently open surveys on behalf of the participant. For some surveys, we allow for the updating of answers and thus need to enable the save & return later feature. But we don't wish the Save & Return button to be displayed because we want the user to be routed through the portal instead. 
