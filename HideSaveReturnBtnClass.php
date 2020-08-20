@@ -23,23 +23,35 @@ class HideSaveReturnBtnClass extends AbstractExternalModule {
 
         if (isset($_GET['__return'])) {
             // This is a save and return
-            $this->redirectToPortal();
             $this->exitAfterHook(); // added 04-23-2020
+            $this->redirectToPortal();
+        }
+    }
+    
+    function redirect() {
+        // If contents already output, use javascript to redirect instead
+        if (headers_sent())
+        {
+            echo "<script type='text/javascript'>window.location.href=\"$url\";</script>";
+        }
+        // Redirect using PHP
+        else
+        {
+            header("Location: $url");
         }
     }
 
     function redirectToPortal() {
         $addBtnUrl = $this->getProjectSetting('global_custom_button_url');
-        redirect($addBtnUrl);
-        $this->exitAfterHook();
+        $this->redirect($addBtnUrl);
     }
 
     function redcap_survey_complete($project_id, $record, $instrument, $event_id, $group_id, $survey_hash, $response_id, $repeat_instance)
     {
         // REDCap::logEvent("Survey Complete Hook Called", "$record - $instrument - $event_id");
         $addBtnUrl = $this->getProjectSetting('global_custom_button_url');
-        redirect($addBtnUrl);
         $this->exitAfterHook();
+        $this->redirect($addBtnUrl);
     }
 
     function redcap_survey_page($project_id, $record, $instrument, $event_id, $group_id, $repeat_instance) 
